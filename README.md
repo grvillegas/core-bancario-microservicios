@@ -21,7 +21,7 @@ Microservicios bancarios sencillos: `clientes-service` y `cuentas-service`.
 Desde la raíz del repositorio:
 
 ```bash
-mvn -T1C -DskipTests package
+mvn clean install
 ```
 
 Esto compila ambos módulos y genera los JAR en `target/`.
@@ -31,14 +31,14 @@ Esto compila ambos módulos y genera los JAR en `target/`.
 Ejecutar un servicio a la vez:
 
 ```bash
-mvn -pl clientes-service spring-boot:run
-mvn -pl cuentas-service spring-boot:run
+java -jar target/clientes-service-0.0.1-SNAPSHOT.jar
+java -jar target/cuentas-service-0.0.1-SNAPSHOT.jar
 ```
 
 O ejecutar ambos mediante Docker Compose:
 
 ```bash
-docker-compose up --build
+docker-compose up --build -d
 ```
 
 ## Base de datos
