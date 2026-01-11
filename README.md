@@ -56,19 +56,27 @@ Modifica las propiedades de conexión a la base de datos y puertos según tu ent
 Para ejecutar pruebas:
 
 ```bash
-mvn test
+1. Levantar el Docker Engine
+2. Compilar y empaqiuetar el proyecto 
+   mvn clean install
+3. Comprobar los servicios (Verificación de los archivos JAR)
+   3.1 Para el servicio de clientes 
+       java -jar target/clientes-service-0.0.1-SNAPSHOT.jar
+   3.2 Para el servicio de cuentas
+       java -jar target/cuentas-service-0.0.1-SNAPSHOT.jar
+4. Levantar los contenedores
+    docker-compose up --build -d
+5. Probando los servicios clientes y cuentas mediante Swagger UI
+   5.1 Acceder a Swagger UI del servicio de clientes
+       http://localhost:8081/swagger-ui.html
+   5.2 Acceder a Swagger UI del servicio de cuentas
+       http://localhost:8082/swagger-ui.html
+
 ```
 
 ## Notas sobre actualización a Java 21
 
 - Actualmente los módulos usan `<java.version>17` en sus `pom.xml`.
-- Para actualizar a Java 21 se recomienda:
-  1. Instalar JDK 21 en el equipo.
-  2. Ejecutar un plan de actualización (analizar dependencias y cambios de código).
-  3. Actualizar las propiedades `java.version` en los `pom.xml` al valor `21`.
-  4. Compilar y corregir incompatibilidades (migraciones de APIs, cambios de módulos internos).
-
-Si quieres, puedo generar un plan de actualización automatizado y aplicar los cambios necesarios.
 
 ## Contribuir
 
