@@ -1,0 +1,5 @@
+com\banco\clientes\controller\ClienteController.class
+com\banco\clientes\model\Cliente.class
+com\banco\clientes\ClientesServiceApplication.class
+com\banco\clientes\service\ClienteService.class
+com\banco\clientes\repository\ClienteRepository.class

@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS cuenta (
+    id SERIAL PRIMARY KEY,
+    tipo VARCHAR(20) NOT NULL,
+    estado VARCHAR(20) NOT NULL,
+    saldo NUMERIC(15,2) DEFAULT 0.00,
+    cliente_id BIGINT NOT NULL
+);
